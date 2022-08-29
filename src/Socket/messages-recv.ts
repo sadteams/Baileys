@@ -20,7 +20,7 @@ export const makeMessagesRecvSocket = (config: SocketConfig) => {
 		ev,
 		authState,
 		ws,
-                query,
+		query,
 		processingMutex,
 		upsertMessage,
 		resyncAppState,
@@ -62,20 +62,6 @@ export const makeMessagesRecvSocket = (config: SocketConfig) => {
 			stanza.attrs.type = attrs.type
 		}
 
-		logger.debug({ recv: { tag, attrs }, sent: stanza.attrs }, 'sent ack')
-		await sendNode(stanza)
-	}
-
-        
-@@ -20,6 +20,7 @@ export const makeMessagesRecvSocket = (config: SocketConfig) => {
-		ev,
-		authState,
-		ws,
-		query,
-		processingMutex,
-		upsertMessage,
-		resyncAppState,
-@@ -64,6 +65,26 @@ export const makeMessagesRecvSocket = (config: SocketConfig) => {
 		logger.debug({ recv: { tag, attrs }, sent: stanza.attrs }, 'sent ack')
 		await sendNode(stanza)
 	}
@@ -652,6 +638,6 @@ export const makeMessagesRecvSocket = (config: SocketConfig) => {
 		...sock,
 		sendMessageAck,
 		sendRetryRequest,
-                rejectCall
+		rejectCall
 	}
 }
