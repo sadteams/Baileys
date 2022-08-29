@@ -285,7 +285,7 @@ export const generateWAMessageContent = async(
 			extContent.jpegThumbnail = urlInfo.jpegThumbnail
 			extContent.description = urlInfo.description
 			extContent.title = urlInfo.title
-			extContent.previewType = 2
+			extContent.previewType = 0
 		}
 
 		m.extendedTextMessage = extContent
@@ -748,7 +748,7 @@ const generateContextInfo = () => {
 export const patchMessageForMdIfRequired = (message: proto.IMessage) => {
 	const requiresPatch = !!(
 		message.buttonsMessage
-		 || message.templateMessage
+		|| message.templateMessage
 		|| message.listMessage
 	)
 	if(requiresPatch) {
